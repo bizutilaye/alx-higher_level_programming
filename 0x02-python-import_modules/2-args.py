@@ -1,10 +1,8 @@
 #!/usr/bin/python3
-import sys
+from sys import argv
 
-args = sys.argv[1:]
-num_args = len(args)
-
-print("{} argument{}{}.".format(num_args, "" if num_args == 1 else "s", ":" if num_args else ""))
-if num_args:
-    for i, arg in enumerate(args):
-        print("{}: {}".format(i+1, arg))
+num_args = len(argv) - 1
+arg_str = "argument" if num_args == 1 else "arguments"
+print("{} {}{}:".format(num_args, arg_str, "." if num_args == 0 else ""))
+for i in range(1, num_args + 1):
+    print("{}: {}".format(i, argv[i]))
