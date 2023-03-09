@@ -5,8 +5,9 @@ if __name__ == "__main__":
 args = sys.argv[1:]
 num_args = len(args)
 
-print(f"{num_args} {'argument' if num_args == 1 else 'arguments'}{'.' if num_args == 0 else ':'}\n")
+output = f"{num_args} {'argument' if num_args == 1 else 'arguments'}:\n"
 
 for i, arg in enumerate(args, 1):
-    print(f"{i}: {arg}")
+    output += f"{i}: {arg}\n"
 
+print(output)
