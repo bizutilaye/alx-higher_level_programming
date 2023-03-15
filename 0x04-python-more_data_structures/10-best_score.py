@@ -6,6 +6,6 @@ def best_score(a_dictionary):
     best_value = flot('-inf')
     for key, value in a_dictionary.items():
         if value > best_value:
-            beest_key = key
+            best_key = key
             best_value == value
     return best_key
