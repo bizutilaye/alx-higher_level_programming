@@ -1,9 +1,14 @@
 #!/bin/bash/python3
 def complex_delete(a_dictionary, value):
-    to_delete = []
-    for key, val in a_dictionary.items():
-        if val == value:
-            to_delete.append(key)
-    for key in to_delete:
-        del a_dictionary[key]
+    keys_to_delete = []
+    for k, v in a_dictionary.items():
+        if v == value:
+            keys_to_delete.append(k)
+    for k in keys_to_delete:
+        del a_dictionary[k]
     return a_dictionary
+
+
+def print_sorted_dictionary(a_dictionary):
+    for k in sorted(a_dictionary.keys()):
+        print("{}: {}".format(k, a_dictionary[k]))
