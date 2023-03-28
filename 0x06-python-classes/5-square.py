@@ -1,43 +1,38 @@
 #!/usr/bin/python3
 class Square:
     """
-    Represents a square
+    This is a class Square that defines a square by size.
     """
-
     def __init__(self, size=0):
         """
-        Initializes a Square instance
+        Initializes a new Square.
 
         Args:
-            size (int): the size of the square
-
-        Raises:
-            TypeError: if size is not an integer
-            ValueError: if size is less than 0
+            size (int): The size of the new square.
         """
         self.size = size
 
     @property
     def size(self):
         """
-        Getter method for size
+        Retrieves the size of the square.
 
         Returns:
-            int: the size of the square
+            int: The size of the square.
         """
         return self.__size
 
     @size.setter
     def size(self, value):
         """
-        Setter method for size
+        Sets the size of the square.
 
         Args:
-            value (int): the new size of the square
+            value (int): The new size of the square.
 
         Raises:
-            TypeError: if size is not an integer
-            ValueError: if size is less than 0
+            TypeError: If size is not an integer.
+            ValueError: If size is less than 0.
         """
         if not isinstance(value, int):
             raise TypeError("size must be an integer")
@@ -48,20 +43,21 @@ class Square:
 
     def area(self):
         """
-        Calculates the area of the square
+        Calculates the area of the square.
 
         Returns:
-            int: the area of the square
+            int: The area of the square.
         """
         return self.__size ** 2
 
     def my_print(self):
         """
-        Prints the square using the '#' character
+        Prints the square to stdout using the # character.
         """
         if self.__size == 0:
             print()
             return
-
         for i in range(self.__size):
-            print('#' * self.__size)
+            for j in range(self.__size):
+                print("#", end="")
+            print()
