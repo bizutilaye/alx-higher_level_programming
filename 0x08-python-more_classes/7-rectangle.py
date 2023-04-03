@@ -1,20 +1,21 @@
 #!/usr/bin/python3
 
-'''module: rectangle
+'''module: 7-rectangle
 this module contains the class Rectangle ...
 '''
 
 
 class Rectangle:
     '''class: Rectangle
-    this is Rectangle class
+    this is an empty class, further additions in subsequent assignments
     '''
 
     number_of_instances = 0
+    print_symbol = "#"
 
     def __init__(self, width=0, height=0):
         '''method: __init__
-        initialize instance of class
+        initialize instance of class Rectangle
         '''
         Rectangle.number_of_instances += 1
         self.__width = width
@@ -34,7 +35,8 @@ class Rectangle:
 
     @width.setter
     def width(self, width):
-        '''method set_width
+        '''method: set_width
+        setter
         '''
         if not isinstance(self.__width, int) or isinstance(self.__width, bool):
             raise TypeError("width must be an integer")
@@ -56,7 +58,8 @@ class Rectangle:
 
     @height.setter
     def height(self, height):
-        '''setter
+        '''method: set_height
+        setter
         '''
         if not isinstance(self.__height, int) or isinstance(self.__height,
                                                             bool):
@@ -66,12 +69,14 @@ class Rectangle:
         self.__height = height
 
     def area(self):
-        '''method area of rectangle
+        '''method: area
+        return area of rectangle
         '''
         return self.__height * self.__width
 
     def perimeter(self):
-        '''method return perimeter of perimeter
+        '''method: perimeter
+        return perimeter of perimeter
         '''
         if self.__height == 0 or self.width == 0:
             return 0
@@ -79,19 +84,21 @@ class Rectangle:
 
     def __str__(self):
         '''method: __str__
-        return nice string rectangle
+        return: nice string representation of rectangle
         '''
         ret_str = ""
         if self.__height == 0 or self.__width == 0:
             return ""
         for idx in range(self.__height):
-            ret_str += '#' * self.width
+            ret_str += str(self.print_symbol) * self.width
             if idx + 1 < self.__height:
                 ret_str += '\n'
         return ret_str
 
     def __repr__(self):
-        '''method: __repr__ create new object
+        '''method: __repr__
+        return: representation of rectangle that can be used by eval() to
+                create new object
         '''
         ret_str = "Rectangle(" + str(self.__width) + ","
         ret_str += str(self.__height) + ")"
@@ -99,7 +106,7 @@ class Rectangle:
 
     def __del__(self):
         '''method: __del__
-           deletes instance, prints "bye" message
+           deletes instance of Rectangle class, and prints "bye" message
         '''
         Rectangle.number_of_instances -= 1
         print("Bye rectangle...")
